@@ -2,6 +2,10 @@ import {useState, useEffect, useRef} from "react"
 import { motion } from 'framer-motion'
 import ImageScroll from '../components/ImageScroll'
 import ScrollPositionWrapper from "../components/ScrollPosition"
+import Image1 from "../assets/SIM0285.jpg"
+import Image2 from "../assets/SIM9539.jpg"
+import Image3 from "../assets/SIM0122.jpg"
+import Image4 from "../assets/SIM9639.jpg"
 
 const wordAnimation = {
     hidden: { opacity: 0, y: 10 },
@@ -161,10 +165,10 @@ const About = () => {
                 </ScrollPositionWrapper>
                 <ImageScroll 
                     paths={[
-                        "_SIM0285.jpg",
-                        "_SIM9539.jpg",
-                        "_SIM0122.jpg",
-                        "_SIM9639.jpg"
+                        Image1,
+                        Image2,
+                        Image3,
+                        Image4  
                     ]}
                     />
             </div>

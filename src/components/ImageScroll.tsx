@@ -4,7 +4,6 @@ interface ImageScrollProps {
 }
 const ImageScroll = ({paths}:ImageScrollProps) => {
     const [numberOfDivs, setNumberOfDivs] = useState<number>(0)
-    const subPath = "/assets/"
     useEffect(() => {
         const currentNumber = window.innerWidth >= 1024 ? 10-paths.length : 0
         setNumberOfDivs(currentNumber)
@@ -18,7 +17,7 @@ const ImageScroll = ({paths}:ImageScrollProps) => {
     return (
         <div className="md:pt-2 self-start imageGrid sm:w-full md:max-w-96 overflow-x-auto scrollbar-hidden space-x-2 flex items-end lg:grid lg:grid-cols-4 lg:grid-rows-4 lg:gap-1">
             {
-                paths.map((path, index) => <img className="sm:size-2/3 md:size-full rounded-xl" key={index} src={subPath + path}/>)
+                paths.map((path, index) => <img className="sm:size-2/3 md:size-full rounded-xl" key={index} src={path}/>)
             }
             {
                 Array.from({ length: numberOfDivs }, (_, i) => {
