@@ -24,6 +24,9 @@ const Projects = () => {
       ],
       path: "https://simonsoold.github.io/todo/",
       background: "#242424",
+      color: "white",
+      hover: "gray-500",
+      font: "system-ui"
     }
   ]
   

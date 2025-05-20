@@ -5,8 +5,10 @@ export interface ProjectItem {
     path: string;
     background?: string;
     font?: string;
+    color?: string;
+    hover?: string;
 }
-const Project = ({name, stack, background, font, path}:ProjectItem) => {
+const Project = ({name, stack, background, font, path, color, hover}:ProjectItem) => {
     const [numberOfColums, setNuberOfColumns] = useState<number>(3)
     useEffect(() => {
         const currentNumber = window.innerWidth > 400 ? 4 : 3
@@ -26,10 +28,11 @@ const Project = ({name, stack, background, font, path}:ProjectItem) => {
                 className="sm:size-64 md:size-96 bg-white rounded-lg flex justify-center items-center"
                 style={{background}}
             >
-                <a href={path} className={`text-black hover:text-white text-3xl ${font} transition-colors duration-200`}>{name}</a>
+                <a href={path} className={`text-${color || "black"} hover:text-${hover || "white"} text-3xl ${font} transition-colors duration-200`}>{name}</a>
             </div>
             <p
                 className="sm:w-64 md:w-96 text-lg"
+
             >
                 {name}
             </p>
