@@ -1,0 +1,105 @@
+
+@import "tailwindcss";
+
+body {
+  height: 100dvh;
+  width: 100dvw;
+  font-family: 'Inter', sans-serif;
+}
+:root {
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, .martian {
+  font-family: Martian Mono;
+}
+.pressStart {
+  font-family: 'Press Start 2P', cursive !important;
+}
+#root {
+  background: white;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto repeat(10, 1fr) auto;
+}
+#root > nav {
+  grid-row: 1/2;
+  grid-column: 5/9;
+  align-self: flex-end;
+}
+#root > nav a {
+  text-decoration: none;
+}
+#root > main {
+  grid-row: 2/12;
+  grid-column: 1/end;
+  z-index: 5;
+}
+#root > section {
+  grid-row: 1/2;
+  grid-column: 8/end;
+}
+#root > header {
+  grid-row: 1/2;
+  grid-column: 1/end;
+}
+#root > footer {
+  grid-row: 12/end;
+  grid-column: 1/end;
+}
+#root > .selfImg {
+  grid-row: 5/12;
+  grid-column: 5/9;
+  transform: scaleX(-1);
+}
+#root > .arrowContainer {
+  grid-row: 1/12;
+  grid-column: 8/9;
+  align-self: center;
+  justify-self: flex-end;
+  height: fit-content;
+}
+.mask-fade {
+  -webkit-mask-image: 
+    linear-gradient(to bottom, transparent 0%, white 20%, white 100%),
+    linear-gradient(to left, transparent 0%, white 20%, white 100%);
+  mask-image: 
+    linear-gradient(to bottom, transparent 0%, white 20%, white 100%),
+    linear-gradient(to left, transparent 0%, white 20%, white 100%);
+  -webkit-mask-composite: intersect;
+  mask-composite: intersect;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+.direction-rtl {
+  direction: rtl;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: all-scroll;
+}
+.imageGrid img:first-child {
+  grid-column: 3/5;
+  grid-row: 3/5;
+}
+.imageGrid img:nth-child(2) {
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+.imageGrid img:nth-child(4) {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+

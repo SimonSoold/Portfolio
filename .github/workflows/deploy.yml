@@ -1,0 +1,39 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          npm run build
+
+      - name: Check output directory
+        run: ls -la dist
+
+      - name: Verify output folder
+        run: ls -la dist
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist
+          commit-message: "Deploy from GitHub Actions"
+          clean: true
+          single-commit: true
+          git-config-name: github-actions
+          git-config-email: github-actions@github.com
+          token: ${{ secrets.GITHUB_TOKEN }}
