@@ -23,7 +23,7 @@ const Projects = () => {
         "Typescript"
       ],
       path: "https://simonsoold.github.io/todo/",
-      background: "white"
+      background: "#242424",
     }
   ]
   return (
