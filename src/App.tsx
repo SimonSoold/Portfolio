@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <ScrollContext.Provider value={{isNear,setIsNear}}>
-        <BrowserRouter>
+        <BrowserRouter basename="/Portfolio">
           <header className="text-black p-2 w-full border-b border-black border-box">
             <h1 className="text-5xl font-bold">Portfolio</h1>
             <p className='text-lg'>Simon Soold</p>
