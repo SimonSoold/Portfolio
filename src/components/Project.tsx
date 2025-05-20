@@ -25,7 +25,7 @@ const Project = ({name, stack, background, font, path, color, hover}:ProjectItem
             className="w-full flex flex-col justify-center items-center bg-black text-white pt-8 pb-8 mb-2 last:mb-0"
         >
             <div
-                className="sm:size-64 md:size-96 bg-white rounded-lg flex justify-center items-center"
+                className="p-1 box-border sm:size-fit md:size-96 bg-white rounded-lg flex justify-center items-center"
                 style={{background}}
             >
                 <a href={path} className={`text-${color || "black"} hover:text-${hover || "white"} text-3xl ${font} transition-colors duration-200`}>{name}</a>
