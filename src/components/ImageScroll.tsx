@@ -17,7 +17,7 @@ const ImageScroll = ({paths}:ImageScrollProps) => {
     return (
         <div className="md:pt-2 self-start imageGrid sm:w-full md:max-w-96 overflow-x-auto scrollbar-hidden space-x-2 flex items-end lg:grid lg:grid-cols-4 lg:grid-rows-4 lg:gap-1">
             {
-                paths.map((path, index) => <img className="sm:size-2/3 md:size-full rounded-xl" key={index} src={path}/>)
+                paths.map((path, index) => <img className="sm:size-2/3 md:size-full max-h-full rounded-xl" key={index} src={path}/>)
             }
             {
                 Array.from({ length: numberOfDivs }, (_, i) => {
